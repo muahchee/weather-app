@@ -1,3 +1,5 @@
+import "./styles.css";
+
 async function getWeather(location) {
   const response = await fetch(
     `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=3RE8URH9BP6H4YL46EP2U53LT`,
@@ -5,8 +7,24 @@ async function getWeather(location) {
   );
 
   const weatherData = await response.json();
-
   console.log(weatherData);
+  return weatherData;
 }
 
-getWeather("Auckland");
+async function getCurrentConditions(location) {
+  const weatherData = await getWeather(location);
+
+  const currentObj = {
+    icon: weatherData.currentConditions.icon,
+    datetime: weatherData.currentConditions.datetime,
+    conditions: weatherData.currentConditions.conditions,
+    temp: weatherData.currentConditions.temp,
+    uvindex: weatherData.currentConditions.uvindex,
+    precipprob: weatherData.currentConditions.precipprob
+  }
+
+  console.log(weatherData.currentConditions)
+  console.log(currentObj)
+}
+
+getCurrentConditions("Auckland");
