@@ -84,8 +84,6 @@ export class WeatherDataProcessor {
       current: await this._getCurrentConditions(),
       forecast: await this._getDaysForecast(),
     };
-    // console.log(processedWeatherData)
-    return processedWeatherData
+    return processedWeatherData;
   }
-
 }

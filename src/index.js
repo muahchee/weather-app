@@ -4,6 +4,6 @@ import { getWeather } from "./scripts/getWeather.js";
 
 const json = getWeather("Auckland");
 
-const data = new WeatherDataProcessor(json).processWeatherData();
+const promiseData = new WeatherDataProcessor(json).processWeatherData();
 
-data.then(value => console.log(value))
+promiseData.then((value) => console.log(value));
