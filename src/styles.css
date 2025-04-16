@@ -43,6 +43,7 @@ body {
   justify-content: center;
   
   padding: 2vw;
+  font-family: 'Nimbus Mono PS', 'Courier New', monospace;
 }
 
 div.full-wrap {
@@ -105,7 +106,8 @@ div.current-container {
 
 div.bottom-containers {
   display: flex;
-  gap: 30px;
+  gap: 60px;
+  flex-wrap: wrap;
 }
 
 .hours-container {
@@ -139,6 +141,40 @@ div.bottom-containers {
 }
 
 .hour-percipprob img {
+  width: 1.5rem;
+  margin-right: 0.7rem;
+}
+
+.days-container {
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  height: 500px;
+  padding: 40px 20px;
+  overflow-y: scroll;
+}
+
+.day {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+
+  padding: 15px;
+  border: 2px solid black;
+  font-size: 1.2rem;
+}
+
+.day img {
+  width: 50px;
+}
+
+.day-date {
+  font-size: 2.5rem;
+}
+
+.day-percipprob img {
   width: 1.5rem;
   margin-right: 0.7rem;
 }
