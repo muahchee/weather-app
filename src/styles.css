@@ -102,3 +102,44 @@ div.current-container {
 
   font-size: 4rem;
 }
+
+div.bottom-containers {
+  display: flex;
+  gap: 30px;
+}
+
+.hours-container {
+  width: min(270px, 100%);
+  height: 500px;
+  overflow-y: scroll;
+}
+
+.hour {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  padding: 15px;
+  border-bottom: 2px solid black;
+}
+
+.hour-time {
+  font-size: 1.8rem;
+}
+
+.hour-info {
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 1.2rem;
+}
+
+.hour-info img {
+  width: 50px;
+}
+
+.hour-percipprob img {
+  width: 1.5rem;
+  margin-right: 0.7rem;
+}
+
