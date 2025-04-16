@@ -15,4 +15,6 @@ form.addEventListener("submit", (e) => {
   const promiseData = new WeatherDataProcessor(json).processWeatherData();
 
   promiseData.then((value) => console.log(value));
+
+  form.reset()
 });

@@ -53,13 +53,15 @@ h1, h2, h3, h4, h5, h6 {
 
 /* main */
 * {
-  --lightest: #f7f3eb;
+  --lightest: #ffffff;
   --light: #f5ebd1;
   --dark: #4eb13c;
   --darkest: #1f4e17;
-  --accent1: #ffc729;
+  --accent1: #ffda0f;
+  --accent1-light: #ffea2c;
   --accent2: #e98274;
 
+  --border: 3px solid var(--darkest);
 }
 
 body {
@@ -88,7 +90,7 @@ div.top {
 }
 
 div.search-container {
-  border: 2px solid var(--darkest);
+  border: var(--border);
   padding: 10px 15px;
   background-color: var(--dark);
 }
@@ -101,7 +103,7 @@ form {
 
 form input {
   background-color: var(--light);
-  border: 2px solid var(--darkest);
+  border: var(--border);
   padding: 0 10px;
 }
 
@@ -118,9 +120,11 @@ form button {
 }
 
 div.top button.change-unit {
-background-color: var(--accent2);
-color: var(--darkest);
-padding: 10px 20px;
+  background-color: var(--accent2);
+  color: var(--darkest);
+  padding: 10px 20px;
+  outline: var(--border);
+  border-radius: 10px;
 }
 
 div.current-container {
@@ -131,14 +135,14 @@ div.current-container {
 .current-container .current-img {
   width: min(500px, 90vw);
   background-color: transparent;
-  border: 2px solid var(--darkest);
+  border: var(--border);
 
   /* temp */aspect-ratio: 1/0.5;
   
 }
 
 .current-container .current {
-  border: 2px solid var(--darkest);
+  border: var(--border);
   padding: 20px;
   background-color: var(--dark);
   color: var(--lightest);
@@ -153,6 +157,7 @@ div.current-container {
   align-items: center;
 
   margin-bottom: 10px;
+  color: var(--accent1-light);
 }
 
 .current-date,
@@ -180,6 +185,7 @@ div.bottom-containers {
   background-color: var(--dark);
   color: var(--lightest);
   scrollbar-color: var(--accent1) var(--dark);
+  border: var(--border);
 }
 
 .hour {
@@ -188,7 +194,7 @@ div.bottom-containers {
   gap: 10px;
 
   padding: 15px;
-  border-bottom: 2px solid var(--darkest);
+  border-bottom: var(--border);
 }
 
 .hour-time {
@@ -218,6 +224,7 @@ div.bottom-containers {
   height: 500px;
   padding: 40px 20px;
   overflow-y: scroll;
+  scrollbar-color: var(--dark) transparent;
 }
 
 .day {
@@ -227,9 +234,10 @@ div.bottom-containers {
   gap: 10px;
 
   padding: 15px;
-  border: 2px solid var(--darkest);
+  border: var(--border);
+  border-radius: 10px;
   background-color: var(--accent1);
-  /* color: var(--lightest); */
+  
 }
 
 .day img {
