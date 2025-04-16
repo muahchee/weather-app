@@ -136,10 +136,13 @@ div.current-container {
   width: min(500px, 90vw);
   background-color: transparent;
   border: var(--border);
-
-  /* temp */aspect-ratio: 1/0.5;
   
 }
+
+.current-img > img:nth-child(1) {
+  height: 100%;
+  object-fit: cover;
+  }
 
 .current-container .current {
   border: var(--border);
@@ -237,6 +240,7 @@ div.bottom-containers {
   border: var(--border);
   border-radius: 10px;
   background-color: var(--accent1);
+  box-shadow: 5px 5px 1px 3px var(--dark);
   
 }
 
@@ -245,7 +249,7 @@ div.bottom-containers {
 }
 
 .day-date {
-  font-size: 2.5rem;
+  font-size: calc(1rem + 1vw);
 }
 
 .day-percipprob img {
