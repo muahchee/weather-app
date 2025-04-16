@@ -4,12 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather</title>
+
   </head>
   <body>
-    <form action="">
-      <label for="location">Location: </label>
-      <input type="text" id="location" name="location" />
-      <button type="submit">Confirm</button>
-    </form>
+    <div class="full-wrap">
+      <div class="top">
+        <div class="search-container">
+          <form action="">
+            <label for="location">Location: </label>
+            <input type="text" id="location" name="location" />
+            <button type="submit">Confirm</button>
+          </form>
+        </div>
+        <button class="change-unit">Change to Fahrenheit</button>
+      </div>
+      <div class="current-container">
+        <div class="current-img"></div>
+        <div class="current">        
+          <div class="current-main-info">
+            <div>
+              <h1>Auckland</h1>
+              <p class="current-date">16/4/25</p>
+              <p class="current-time">18:00:00</p>
+            </div>
+            <p class="current-temp">20°C</p>
+          </div>
+          <p class="current-uv">UV index: 2</p>
+          <p class="current-precipprob">Rain chance: 90%</p>
+          <p class="current-condition">Windy and cloudy with chance of rain at night.</p>
+        </div>
+      </div>
+      <div class="hours-container">
+      </div>
+      <div class="days-container">
+      </div>
+      </div>
+    </div>
   </body>
 </html>

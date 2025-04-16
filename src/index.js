@@ -1,6 +1,7 @@
 import "./styles.css";
-import { WeatherDataProcessor } from "./scripts/weatherDataProcessor.js";
 import { getWeather } from "./scripts/getWeather.js";
+import { WeatherDataProcessor } from "./scripts/weatherDataProcessor.js";
+
 
 const form = document.querySelector("form");
 
@@ -15,9 +16,3 @@ form.addEventListener("submit", (e) => {
 
   promiseData.then((value) => console.log(value));
 });
-
-// const json = getWeather("Auckland");
-
-// const promiseData = new WeatherDataProcessor(json).processWeatherData();
-
-// promiseData.then((value) => console.log(value));
