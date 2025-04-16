@@ -1,3 +1,17 @@
+@font-face {
+  font-family: 'basiic';
+  src: url(./basiic.ttf);
+}
+
+@font-face {
+  font-family: 'yoster';
+  src: url(./yoster.ttf);
+}
+
+@font-face {
+  font-family: 'heartfont';
+  src: url(./heartfont.ttf);
+}
 /* reset */
 * {
   box-sizing: border-box;
@@ -38,12 +52,26 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* main */
+* {
+  --lightest: #f7f3eb;
+  --light: #f5ebd1;
+  --dark: #4eb13c;
+  --darkest: #1f4e17;
+  --accent1: #ffc729;
+  --accent2: #e98274;
+
+}
+
 body {
   display: flex;
   justify-content: center;
   
   padding: 2vw;
-  font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+  font-family: 'basiic', 'Nimbus Mono PS', 'Courier New', monospace;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--darkest);
+  background-color: var(--light);
 }
 
 div.full-wrap {
@@ -56,11 +84,43 @@ div.full-wrap {
 div.top {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 div.search-container {
-  border: 2px solid black;
+  border: 2px solid var(--darkest);
   padding: 10px 15px;
+  background-color: var(--dark);
+}
+
+form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+form input {
+  background-color: var(--light);
+  border: 2px solid var(--darkest);
+  padding: 0 10px;
+}
+
+form label {
+  color: var(--lightest);
+  font-weight: bold;
+  font-family: 'yoster', sans-serif;
+}
+
+form button {
+  background-color: var(--accent1);
+  color: var(--darkest);
+  outline: 2px solid var(--darkest);
+}
+
+div.top button.change-unit {
+background-color: var(--accent2);
+color: var(--darkest);
+padding: 10px 20px;
 }
 
 div.current-container {
@@ -70,16 +130,18 @@ div.current-container {
 
 .current-container .current-img {
   width: min(500px, 90vw);
-  background-color: green;
-  border: 2px solid black;
+  background-color: transparent;
+  border: 2px solid var(--darkest);
 
   /* temp */aspect-ratio: 1/0.5;
   
 }
 
 .current-container .current {
-  border: 2px solid black;
+  border: 2px solid var(--darkest);
   padding: 20px;
+  background-color: var(--dark);
+  color: var(--lightest);
 
   flex: 1;
   
@@ -114,6 +176,10 @@ div.bottom-containers {
   width: min(270px, 100%);
   height: 500px;
   overflow-y: scroll;
+
+  background-color: var(--dark);
+  color: var(--lightest);
+  scrollbar-color: var(--accent1) var(--dark);
 }
 
 .hour {
@@ -122,7 +188,7 @@ div.bottom-containers {
   gap: 10px;
 
   padding: 15px;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid var(--darkest);
 }
 
 .hour-time {
@@ -132,8 +198,6 @@ div.bottom-containers {
 .hour-info {
   display: flex;
   justify-content: space-between;
-
-  font-size: 1.2rem;
 }
 
 .hour-info img {
@@ -159,11 +223,13 @@ div.bottom-containers {
 .day {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 10px;
 
   padding: 15px;
-  border: 2px solid black;
-  font-size: 1.2rem;
+  border: 2px solid var(--darkest);
+  background-color: var(--accent1);
+  /* color: var(--lightest); */
 }
 
 .day img {
