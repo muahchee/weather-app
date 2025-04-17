@@ -3,32 +3,19 @@ export class WeatherDataProcessor {
     this.weatherData = weatherData;
   }
 
-  async _getGeneralInfo() {
-    try {
-      const currentLocation = await this.weatherData;
-
-      const generalObj = {
-        resolvedAddress: currentLocation.resolvedAddress,
-        description: currentLocation.description,
-      };
-
-      return generalObj;
-    } catch (err) {
-      console.log(err);
-    }
-  }
-
   async _getCurrentConditions() {
     try {
       const weatherData = await this.weatherData;
 
       const currentObj = {
         icon: weatherData.currentConditions.icon,
-        datetime: weatherData.currentConditions.datetime,
-        conditions: weatherData.currentConditions.conditions,
+        resolvedAddress: weatherData.resolvedAddress,
+        date: weatherData.days[0].datetime,
+        time: weatherData.currentConditions.datetime,
         temp: weatherData.currentConditions.temp,
         uvindex: weatherData.currentConditions.uvindex,
         precipprob: weatherData.currentConditions.precipprob,
+        description: weatherData.days[0].description,
       };
 
       return currentObj;
@@ -48,27 +35,11 @@ export class WeatherDataProcessor {
       sevenDayData.forEach((obj) => {
         let dayObj = {
           datetime: obj.datetime,
-          description: obj.description,
           icon: obj.icon,
-          temp: obj.temp,
           tempmax: obj.tempmax,
           tempmin: obj.tempmin,
-          uvindex: obj.uvindex,
           precipprob: obj.precipprob,
         };
-
-        let hoursArr = [];
-        obj.hours.forEach((obj) => {
-          let hourObj = {
-            datetime: obj.datetime,
-            icon: obj.icon,
-            temp: obj.temp,
-            precipprob: obj.precipprob,
-          };
-          hoursArr.push(hourObj);
-        });
-        dayObj["hours"] = hoursArr;
-
         sevenDayArr.push(dayObj);
       });
 
@@ -78,11 +49,32 @@ export class WeatherDataProcessor {
     }
   }
 
+  async _getHoursForecast() {
+    try {
+      const weatherData = await this.weatherData;
+      const todayHoursData = weatherData.days[0].hours;
+
+      const hoursArr = [];
+      todayHoursData.forEach((obj) => {
+        let hourObj = {
+          time: obj.datetime,
+          icon: obj.icon,
+          temp: obj.temp,
+          precipprob: obj.precipprob,
+        };
+        hoursArr.push(hourObj);
+      });
+      return hoursArr;
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   async processWeatherData() {
     const processedWeatherData = {
-      general: await this._getGeneralInfo(),
-      current: await this._getCurrentConditions(),
-      forecast: await this._getDaysForecast(),
+      general: await this._getCurrentConditions(),
+      hours: await this._getHoursForecast(),
+      days: await this._getDaysForecast(),
     };
     return processedWeatherData;
   }
