@@ -34,7 +34,7 @@ export class WeatherDataProcessor {
 
       sevenDayData.forEach((obj) => {
         let dayObj = {
-          datetime: obj.datetime,
+          date: obj.datetime,
           icon: obj.icon,
           tempmax: obj.tempmax,
           tempmin: obj.tempmin,

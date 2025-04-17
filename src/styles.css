@@ -64,6 +64,21 @@ h1, h2, h3, h4, h5, h6 {
   --border: 3px solid var(--darkest);
 }
 
+dialog{
+
+  background-color: var(--light);
+  color: var(--darkest);
+
+  /* centers */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  padding: 40px 25px;
+
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -116,7 +131,14 @@ form label {
 form button {
   background-color: var(--accent1);
   color: var(--darkest);
+  border: 3px outset var(--light);
   outline: 2px solid var(--darkest);
+}
+
+form button:focus {
+  background-color: var(--darkest);
+  color: var(--accent1-light);
+  border: 3px inset var(--light);
 }
 
 div.top button.change-unit {
@@ -124,7 +146,14 @@ div.top button.change-unit {
   color: var(--darkest);
   padding: 10px 20px;
   outline: var(--border);
+  border: 3px outset var(--light);
   border-radius: 10px;
+}
+
+div.top button.change-unit:focus {
+  background-color: var(--darkest);
+  color: var(--accent2);
+  border: 3px inset var(--light);
 }
 
 div.current-container {
@@ -142,6 +171,7 @@ div.current-container {
 .current-img > img:nth-child(1) {
   width: 100%;
   height: 100%;
+  max-height: 283px;
   object-fit: cover;
   }
 
@@ -184,7 +214,7 @@ div.bottom-containers {
 
 .hours-container {
   width: min(270px, 100%);
-  height: 500px;
+  height: 450px;
   overflow-y: scroll;
 
   background-color: var(--dark);
@@ -215,9 +245,17 @@ div.bottom-containers {
   width: 50px;
 }
 
-.hour-percipprob img {
+.hour-rain {
+  display: flex;
+  align-items: center;
+}
+
+.hour-rain img {
   width: 1.5rem;
-  margin-right: 0.7rem;
+}
+
+.hour-rain span {
+  margin-top: 5px;
 }
 
 .days-container {
@@ -226,7 +264,7 @@ div.bottom-containers {
   flex-direction: column;
   gap: 40px;
 
-  height: 500px;
+  height: 450px;
   padding: 40px 20px;
   overflow-y: scroll;
   scrollbar-color: var(--dark) transparent;
@@ -254,8 +292,18 @@ div.bottom-containers {
   font-size: calc(1rem + 1vw);
 }
 
-.day-percipprob img {
-  width: 1.5rem;
-  margin-right: 0.7rem;
+.day-rain {
+  display: flex;
+  align-items: center;
 }
+
+.day-rain img{
+  width: 1.5rem;
+}
+
+.day-rain span {
+  margin-top: 5px;
+}
+
+
 
