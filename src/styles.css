@@ -150,6 +150,7 @@ div.current-container {
   padding: 20px;
   background-color: var(--dark);
   color: var(--lightest);
+  width: 100%;
 
   flex: 1;
   
@@ -172,7 +173,7 @@ div.current-container {
 .current-temp {
   align-self: flex-end;
 
-  font-size: 4rem;
+  font-size: calc(2.5rem + 1vw);
 }
 
 div.bottom-containers {

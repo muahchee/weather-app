@@ -9,13 +9,13 @@ export class WeatherDataProcessor {
 
       const currentObj = {
         icon: weatherData.currentConditions.icon,
-        resolvedAddress: weatherData.resolvedAddress,
+        address: weatherData.resolvedAddress,
         date: weatherData.days[0].datetime,
         time: weatherData.currentConditions.datetime,
         temp: weatherData.currentConditions.temp,
         uvindex: weatherData.currentConditions.uvindex,
-        precipprob: weatherData.currentConditions.precipprob,
-        description: weatherData.days[0].description,
+        rain: weatherData.currentConditions.precipprob,
+        condition: weatherData.days[0].description,
       };
 
       return currentObj;
@@ -38,7 +38,7 @@ export class WeatherDataProcessor {
           icon: obj.icon,
           tempmax: obj.tempmax,
           tempmin: obj.tempmin,
-          precipprob: obj.precipprob,
+          rain: obj.precipprob,
         };
         sevenDayArr.push(dayObj);
       });
@@ -60,7 +60,7 @@ export class WeatherDataProcessor {
           time: obj.datetime,
           icon: obj.icon,
           temp: obj.temp,
-          precipprob: obj.precipprob,
+          rain: obj.precipprob,
         };
         hoursArr.push(hourObj);
       });
@@ -72,7 +72,7 @@ export class WeatherDataProcessor {
 
   async processWeatherData() {
     const processedWeatherData = {
-      general: await this._getCurrentConditions(),
+      current: await this._getCurrentConditions(),
       hours: await this._getHoursForecast(),
       days: await this._getDaysForecast(),
     };

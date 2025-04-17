@@ -1,3 +1,4 @@
+import { CurrentDisplay } from "./currentDisplay";
 
 export class DataDisplay {
   constructor(dataObj) {
@@ -5,6 +6,6 @@ export class DataDisplay {
   }
 
   displayData() {
-    
+    new CurrentDisplay(this.dataObj.current).displayCurrent();
   }
 }
