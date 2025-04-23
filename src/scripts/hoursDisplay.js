@@ -7,13 +7,13 @@ export class HoursDisplay {
   }
 
   async _getRainImg(rainImg) {
-    const rainSrc = await import(`../icons/water-alert.svg`);
+    const rainSrc = await import(`../png/umbrella.png`);
     rainImg.src = rainSrc.default;
     return;
   }
 
   async _changeHourIcon(hour, hourIcon) {
-    const newImage = await import(`../icons/${hour.icon}.svg`);
+    const newImage = await import(`../png/${hour.icon}.png`);
     hourIcon.src = newImage.default;
     return;
   }

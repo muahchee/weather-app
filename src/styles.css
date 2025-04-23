@@ -55,9 +55,9 @@ h1, h2, h3, h4, h5, h6 {
 * {
   --lightest: #ffffff;
   --light: #f5ebd1;
-  --dark: #4eb13c;
+  --dark: #1e8d0a;
   --darkest: #1f4e17;
-  --accent1: #ffda0f;
+  --accent1: #ffd700;
   --accent1-light: #ffea2c;
   --accent2: #e98274;
 
@@ -165,14 +165,18 @@ div.current-container {
   width: min(500px, 90vw);
   background-color: transparent;
   border: var(--border);
-  
+  display: flex;
 }
 
 .current-img > img:nth-child(1) {
+  /* for illust
   width: 100%;
   height: 100%;
   max-height: 283px;
-  object-fit: cover;
+  object-fit: cover; */
+
+  /* for icon */
+  margin: auto;
   }
 
 .current-container .current {
@@ -242,7 +246,9 @@ div.bottom-containers {
 }
 
 .hour-info img {
-  width: 50px;
+  max-width: 75px;
+  background: var(--light);
+  border-radius: 20px;
 }
 
 .hour-rain {
@@ -251,11 +257,12 @@ div.bottom-containers {
 }
 
 .hour-rain img {
-  width: 1.5rem;
+  width: 2.5rem;
 }
 
 .hour-rain span {
-  margin-top: 5px;
+  margin-top: 4px;
+  margin-left: 5px;
 }
 
 .days-container {
@@ -285,7 +292,10 @@ div.bottom-containers {
 }
 
 .day img {
-  width: 50px;
+  width: 65px;
+  background-color: var(--light);
+  border-radius: 20px;
+  border: 2px solid;
 }
 
 .day-date {
@@ -298,11 +308,12 @@ div.bottom-containers {
 }
 
 .day-rain img{
-  width: 1.5rem;
+  width: 2.5rem;
 }
 
 .day-rain span {
   margin-top: 5px;
+  margin-left: 5px;
 }
 
 

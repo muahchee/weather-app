@@ -7,13 +7,13 @@ export class DaysDisplay {
   }
 
   async _getRainImg(rainImg) {
-    const rainSrc = await import(`../icons/water-alert-blk.svg`);
+    const rainSrc = await import(`../png/umbrella.png`);
     rainImg.src = rainSrc.default;
     return;
   }
 
   async _changedayIcon(day, dayIcon) {
-    const newImage = await import(`../icons/${day.icon}.svg`);
+    const newImage = await import(`../png/${day.icon}.png`);
     dayIcon.src = newImage.default;
     return;
   }
