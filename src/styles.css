@@ -55,10 +55,10 @@ h1, h2, h3, h4, h5, h6 {
 * {
   --lightest: #ffffff;
   --light: #f8f0db;
-  --dark: #e8807d;
+  --dark: #e7a8a6;
   --darkest: #250454;
   --accent1: #ffe559;
-  --accent1-light: #ffe819;
+  --accent1-light: #fbff00;
   --accent2: #e98274;
 
   --border: 3px solid var(--darkest);
@@ -89,6 +89,7 @@ body {
   font-weight: bold;
   color: var(--darkest);
   background-color: var(--light);
+  text-shadow: 1px 1px 3px rgb(226, 106, 106);
 }
 
 div.full-wrap {
@@ -197,6 +198,8 @@ div.current-container {
 
   margin-bottom: 10px;
   color: var(--accent1-light);
+  font-family: 'yoster', sans-serif;
+  text-shadow: 1px 2px 3px var(--darkest);
 }
 
 .current-date,
