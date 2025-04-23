@@ -18,6 +18,7 @@ export class CurrentDisplay {
   async _changeCurrentImg() {
     const newImage = await import(`../png/${this.currentData.icon}.png`);
     this.currentImg.src = newImage.default;
+    this.currentImg.alt = `${this.currentData.icon} icon`
     return;
   }
 

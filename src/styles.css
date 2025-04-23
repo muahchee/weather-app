@@ -54,11 +54,11 @@ h1, h2, h3, h4, h5, h6 {
 /* main */
 * {
   --lightest: #ffffff;
-  --light: #f5ebd1;
-  --dark: #1e8d0a;
-  --darkest: #1f4e17;
-  --accent1: #ffd700;
-  --accent1-light: #ffea2c;
+  --light: #f8f0db;
+  --dark: #e8807d;
+  --darkest: #250454;
+  --accent1: #ffe559;
+  --accent1-light: #ffe819;
   --accent2: #e98274;
 
   --border: 3px solid var(--darkest);
@@ -142,7 +142,7 @@ form button:focus {
 }
 
 div.top button.change-unit {
-  background-color: var(--accent2);
+  background-color: var(--accent1);
   color: var(--darkest);
   padding: 10px 20px;
   outline: var(--border);
@@ -163,7 +163,7 @@ div.current-container {
 
 .current-container .current-img {
   width: min(500px, 90vw);
-  background-color: transparent;
+  background-color: var(--light);
   border: var(--border);
   display: flex;
 }
@@ -176,14 +176,14 @@ div.current-container {
   object-fit: cover; */
 
   /* for icon */
-  margin: auto;
+  margin: 0 auto;
   }
 
 .current-container .current {
   border: var(--border);
   padding: 20px;
   background-color: var(--dark);
-  color: var(--lightest);
+  color: var(--darkest);
   width: 100%;
 
   flex: 1;
@@ -222,7 +222,7 @@ div.bottom-containers {
   overflow-y: scroll;
 
   background-color: var(--dark);
-  color: var(--lightest);
+  color: var(--darkest);
   scrollbar-color: var(--accent1) var(--dark);
   border: var(--border);
 }
@@ -245,24 +245,32 @@ div.bottom-containers {
   justify-content: space-between;
 }
 
+.hour-info div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;  
+}
+
 .hour-info img {
   max-width: 75px;
-  background: var(--light);
+  background: var(--darkest);
   border-radius: 20px;
+  padding: 2px;
 }
 
 .hour-rain {
   display: flex;
   align-items: center;
+  
 }
 
 .hour-rain img {
   width: 2.5rem;
+  background: transparent;
 }
 
 .hour-rain span {
   margin-top: 4px;
-  margin-left: 5px;
 }
 
 .days-container {
@@ -293,9 +301,19 @@ div.bottom-containers {
 
 .day img {
   width: 65px;
-  background-color: var(--light);
+  background-color: var(--darkest);
   border-radius: 20px;
-  border: 2px solid;
+  padding: 2px;
+}
+
+.day-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;  
+}
+
+.day-info p {
+  text-align: end;
 }
 
 .day-date {
@@ -309,11 +327,11 @@ div.bottom-containers {
 
 .day-rain img{
   width: 2.5rem;
+  background: transparent;
 }
 
 .day-rain span {
   margin-top: 5px;
-  margin-left: 5px;
 }
 
 

@@ -9,12 +9,14 @@ export class DaysDisplay {
   async _getRainImg(rainImg) {
     const rainSrc = await import(`../png/umbrella.png`);
     rainImg.src = rainSrc.default;
+    rainImg.alt = "umbrella icon";
     return;
   }
 
   async _changedayIcon(day, dayIcon) {
     const newImage = await import(`../png/${day.icon}.png`);
     dayIcon.src = newImage.default;
+    dayIcon.alt = `${day.icon} icon`
     return;
   }
 

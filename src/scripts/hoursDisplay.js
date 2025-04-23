@@ -9,19 +9,20 @@ export class HoursDisplay {
   async _getRainImg(rainImg) {
     const rainSrc = await import(`../png/umbrella.png`);
     rainImg.src = rainSrc.default;
+    rainImg.alt = "umbrella icon";
     return;
   }
 
   async _changeHourIcon(hour, hourIcon) {
     const newImage = await import(`../png/${hour.icon}.png`);
     hourIcon.src = newImage.default;
+    hourIcon.alt = `${hour.icon} icon`;
     return;
   }
 
   displayHours() {
-
-    while(this.hoursContainer.firstChild) {
-      this.hoursContainer.removeChild(this.hoursContainer.lastChild)
+    while (this.hoursContainer.firstChild) {
+      this.hoursContainer.removeChild(this.hoursContainer.lastChild);
     }
 
     this.hoursData.forEach((hour) => {
