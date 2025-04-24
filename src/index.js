@@ -35,7 +35,7 @@ button.addEventListener("click", () => {
 
 //initial
 loadingScreen.showModal();
-const json = getWeather("Auckland");
+const json = getWeather("Malaysia");
 
 new WeatherDataProcessor(json).processWeatherData().then((value) => {
   new DataDisplay(value).displayData();
