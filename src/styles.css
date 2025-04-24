@@ -59,7 +59,7 @@ h1, h2, h3, h4, h5, h6 {
   --darkest: #250454;
   --accent1: #ffe559;
   --accent1-light: #fbff00;
-  --accent2: #e98274;
+  --accent2: #86c6eb;
 
   --border: 3px solid var(--darkest);
 }
@@ -142,6 +142,22 @@ form button:focus {
   border: 3px inset var(--light);
 }
 
+div.top button.teleporter {
+  background-color: var(--accent2);
+  color: var(--darkest);
+  padding: 10px 20px;
+  outline: var(--border);
+  border: 3px outset var(--light);
+  border-radius: 10px;
+}
+
+div.top button.teleporter:hover,
+div.top button.teleporter:focus {
+  background-color: var(--darkest);
+  color: var(--accent2);
+  border: 3px inset var(--light);
+}
+
 div.top button.change-unit {
   background-color: var(--accent1);
   color: var(--darkest);
@@ -151,9 +167,10 @@ div.top button.change-unit {
   border-radius: 10px;
 }
 
+div.top button.change-unit:hover,
 div.top button.change-unit:focus {
   background-color: var(--darkest);
-  color: var(--accent2);
+  color: var(--accent1);
   border: 3px inset var(--light);
 }
 
